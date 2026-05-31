@@ -28,6 +28,7 @@ namespace SistemaAcademico.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Profesor profesor)
         {
+            ModelState.Remove("Materias");
             if (ModelState.IsValid)
             {
                 _context.Add(profesor);
@@ -50,6 +51,7 @@ namespace SistemaAcademico.Controllers
         public async Task<IActionResult> Edit(int id, Profesor profesor)
         {
             if (id != profesor.ProfesorID) return NotFound();
+            ModelState.Remove("Materias");
             if (ModelState.IsValid)
             {
                 _context.Update(profesor);

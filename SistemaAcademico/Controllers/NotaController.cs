@@ -37,6 +37,7 @@ namespace SistemaAcademico.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Nota nota)
         {
+            ModelState.Remove("Inscripcion");
             if (ModelState.IsValid)
             {
                 nota.NotaFinal = (nota.Nota1 + nota.Nota2) / 2;
@@ -68,6 +69,7 @@ namespace SistemaAcademico.Controllers
         public async Task<IActionResult> Edit(int id, Nota nota)
         {
             if (id != nota.NotaID) return NotFound();
+            ModelState.Remove("Inscripcion");
             if (ModelState.IsValid)
             {
                 nota.NotaFinal = (nota.Nota1 + nota.Nota2) / 2;
