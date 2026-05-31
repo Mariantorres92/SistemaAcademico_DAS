@@ -1,0 +1,32 @@
+﻿@model SistemaAcademico.Models.Estudiante
+@{
+    ViewData["Title"] = "Eliminar Estudiante";
+}
+
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0"><i class="fas fa-trash me-2"></i>Eliminar Estudiante</h4>
+    </div>
+    <div class="card-body">
+        <p class="text-danger fw-bold">¿Está seguro que desea eliminar este estudiante?</p>
+        <dl class="row">
+            <dt class="col-sm-3">Carnet</dt>
+            <dd class="col-sm-9">@Model.Carnet</dd>
+            <dt class="col-sm-3">Nombre</dt>
+            <dd class="col-sm-9">@Model.Nombre @Model.Apellido</dd>
+            <dt class="col-sm-3">Carrera</dt>
+            <dd class="col-sm-9">@Model.Carrera</dd>
+            <dt class="col-sm-3">Correo</dt>
+            <dd class="col-sm-9">@Model.Correo</dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="EstudianteID" />
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-trash me-1"></i>Eliminar
+            </button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left me-1"></i>Cancelar
+            </a>
+        </form>
+    </div>
+</div>

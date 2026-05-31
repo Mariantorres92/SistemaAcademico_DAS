@@ -1,0 +1,32 @@
+﻿@model SistemaAcademico.Models.Inscripcion
+@{
+    ViewData["Title"] = "Eliminar Inscripción";
+}
+
+<div class="card">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0"><i class="fas fa-trash me-2"></i>Eliminar Inscripción</h4>
+    </div>
+    <div class="card-body">
+        <p class="text-danger fw-bold">¿Está seguro que desea eliminar esta inscripción?</p>
+        <dl class="row">
+            <dt class="col-sm-3">Estudiante</dt>
+            <dd class="col-sm-9">@(Model.Estudiante != null ? Model.Estudiante.Nombre + " " + Model.Estudiante.Apellido : "N/A")</dd>
+            <dt class="col-sm-3">Materia</dt>
+            <dd class="col-sm-9">@(Model.Materia != null ? Model.Materia.Nombre : "N/A")</dd>
+            <dt class="col-sm-3">Ciclo</dt>
+            <dd class="col-sm-9">@Model.Ciclo</dd>
+            <dt class="col-sm-3">Fecha</dt>
+            <dd class="col-sm-9">@Model.FechaInscripcion.ToString("dd/MM/yyyy")</dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="InscripcionID" />
+            <button type="submit" class="btn btn-danger">
+                <i class="fas fa-trash me-1"></i>Eliminar
+            </button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left me-1"></i>Cancelar
+            </a>
+        </form>
+    </div>
+</div>

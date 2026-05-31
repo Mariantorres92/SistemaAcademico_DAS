@@ -1,0 +1,30 @@
+﻿@model SistemaAcademico.Models.Materia
+@{
+    ViewData["Title"] = "Detalles Materia";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0"><i class="fas fa-eye me-2"></i>Detalles de la Materia</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Código</dt>
+            <dd class="col-sm-9">@Model.Codigo</dd>
+            <dt class="col-sm-3">Nombre</dt>
+            <dd class="col-sm-9">@Model.Nombre</dd>
+            <dt class="col-sm-3">Créditos</dt>
+            <dd class="col-sm-9">@Model.Creditos</dd>
+            <dt class="col-sm-3">Profesor</dt>
+            <dd class="col-sm-9">@(Model.Profesor != null ? Model.Profesor.Nombre + " " + Model.Profesor.Apellido : "N/A")</dd>
+            <dt class="col-sm-3">Estado</dt>
+            <dd class="col-sm-9">@(Model.Activo ? "Activo" : "Inactivo")</dd>
+        </dl>
+        <a asp-action="Edit" asp-route-id="@Model.MateriaID" class="btn btn-warning">
+            <i class="fas fa-edit me-1"></i>Editar
+        </a>
+        <a asp-action="Index" class="btn btn-secondary ms-2">
+            <i class="fas fa-arrow-left me-1"></i>Volver
+        </a>
+    </div>
+</div>

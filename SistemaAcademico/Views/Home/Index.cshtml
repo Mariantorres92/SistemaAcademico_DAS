@@ -1,8 +1,70 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Inicio";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0"><i class="fas fa-graduation-cap me-2"></i>Sistema de Gestión Académica</h3>
+            </div>
+            <div class="card-body">
+                <p class="lead">Bienvenido al Sistema de Gestión Académica de la Universidad Don Bosco.</p>
+                <p>Gestione estudiantes, profesores, materias, inscripciones y notas desde este panel.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 mb-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-user-graduate fa-3x mb-3" style="color:#16A34A"></i>
+                <h5>Estudiantes</h5>
+                <p>Gestiona el registro de estudiantes.</p>
+                <a href="/Estudiante" class="btn btn-primary">Ver Estudiantes</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-chalkboard-teacher fa-3x mb-3" style="color:#16A34A"></i>
+                <h5>Profesores</h5>
+                <p>Gestiona el registro de profesores.</p>
+                <a href="/Profesor" class="btn btn-primary">Ver Profesores</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-book fa-3x mb-3" style="color:#16A34A"></i>
+                <h5>Materias</h5>
+                <p>Gestiona el catálogo de materias.</p>
+                <a href="/Materia" class="btn btn-primary">Ver Materias</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-clipboard-list fa-3x mb-3" style="color:#16A34A"></i>
+                <h5>Inscripciones</h5>
+                <p>Gestiona las inscripciones de estudiantes.</p>
+                <a href="/Inscripcion" class="btn btn-primary">Ver Inscripciones</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-3">
+        <div class="card text-center h-100">
+            <div class="card-body">
+                <i class="fas fa-star fa-3x mb-3" style="color:#16A34A"></i>
+                <h5>Notas</h5>
+                <p>Gestiona las notas de los estudiantes.</p>
+                <a href="/Nota" class="btn btn-primary">Ver Notas</a>
+            </div>
+        </div>
+    </div>
 </div>

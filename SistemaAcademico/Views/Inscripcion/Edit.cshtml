@@ -1,0 +1,52 @@
+﻿@model SistemaAcademico.Models.Inscripcion
+@{
+    ViewData["Title"] = "Editar Inscripción";
+}
+
+<div class="card">
+    <div class="card-header">
+        <h4 class="mb-0"><i class="fas fa-edit me-2"></i>Editar Inscripción</h4>
+    </div>
+    <div class="card-body">
+        <form asp-action="Edit">
+            <input type="hidden" asp-for="InscripcionID" />
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label asp-for="EstudianteID" class="form-label">Estudiante</label>
+                    <select asp-for="EstudianteID" class="form-select">
+                        <option value="">-- Seleccione un estudiante --</option>
+                        @foreach (var e in ViewBag.Estudiantes)
+                        {
+                            <option value="@e.EstudianteID">@e.Nombre @e.Apellido</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="MateriaID" class="form-label">Materia</label>
+                    <select asp-for="MateriaID" class="form-select">
+                        <option value="">-- Seleccione una materia --</option>
+                        @foreach (var m in ViewBag.Materias)
+                        {
+                            <option value="@m.MateriaID">@m.Nombre</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="Ciclo" class="form-label"></label>
+                    <input asp-for="Ciclo" class="form-control" />
+                    <span asp-validation-for="Ciclo" class="text-danger"></span>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label asp-for="FechaInscripcion" class="form-label"></label>
+                    <input asp-for="FechaInscripcion" class="form-control" type="date" />
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save me-1"></i>Guardar
+            </button>
+            <a asp-action="Index" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left me-1"></i>Cancelar
+            </a>
+        </form>
+    </div>
+</div>
